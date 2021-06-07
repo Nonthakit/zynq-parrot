@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="fifo_design_processing_system7_0_0_synth_1" LaunchDir="/home/chaiwn/ip_repo/edit_fifo_axi_v1_0.runs/fifo_design_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="fifo_design_smartconnect_0_0_synth_1" LaunchDir="/home/chaiwn/ip_repo/edit_fifo_axi_v1_0.runs/fifo_design_smartconnect_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="fifo_design_fifo_axi_0_0_synth_1" LaunchDir="/home/chaiwn/ip_repo/edit_fifo_axi_v1_0.runs/fifo_design_fifo_axi_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/chaiwn/ip_repo/edit_fifo_axi_v1_0.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="fifo_design_processing_system7_0_0_synth_1"/>
+		<Parent Id="fifo_design_smartconnect_0_0_synth_1"/>
+		<Parent Id="fifo_design_fifo_axi_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

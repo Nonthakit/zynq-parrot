@@ -1,0 +1,720 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Jun  1 15:45:30 2021
+# Process ID: 17469
+# Current directory: /home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga
+# Command line: vivado -source vivado-build-ip.tcl -mode tcl
+# Log file: /home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/vivado.log
+# Journal file: /home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/vivado.jou
+#-----------------------------------------------------------
+source vivado-build-ip.tcl
+# source vivado_parse_bp_vcs_flist.tcl
+## proc vivado_parse_bp_vcs_flist {flist_path BP_DIR BASEJUMP_STL_DIR HARDFLOAT_DIR BSG_ZYNQ_PL_SHELL_DIR} {
+## 
+##     set BP_COMMON_DIR $BP_DIR/bp_common
+##     set BP_BE_DIR $BP_DIR/bp_be
+##     set BP_ME_DIR $BP_DIR/bp_me
+##     set BP_FE_DIR $BP_DIR/bp_fe
+##     set BP_TOP_DIR $BP_DIR/bp_top
+##     set f [split [string trim [read [open $flist_path r]]] "\n"]
+##     set flist [list ]
+##     set dir_list [list ]
+##     foreach x $f {
+##         if {![string match "" $x]} {
+##             # If the item starts with +incdir+, directory files need to be added
+##             if {[string match "#" [string index $x 0]]} {
+##                 # get rid of comment line
+##             } elseif {[string match "+" [string index $x 0]]} {
+##                 set trimchars "+incdir+"
+##                 set temp [string trimleft $x $trimchars]
+##                 set expanded [subst $temp]
+##                 lappend dir_list $expanded
+##             } elseif {[string match "*bsg_mem_1rw_sync_mask_write_bit.v" $x]} {
+##                 # bitmasked memories are incorrectly inferred in Kintex 7 and Ultrascale+ FPGAs
+##                 # this version maps into lutram correctly
+##                 set replace_hard "$BASEJUMP_STL_DIR/hard/ultrascale_plus/bsg_mem/bsg_mem_1rw_sync_mask_write_bit.v"
+##                 set expanded [subst $replace_hard]
+##                 lappend flist $expanded
+##                 puts $expanded
+##             } else {
+##                 set expanded [subst $x]
+##                 lappend flist $expanded
+##             }
+##         }
+##     }
+##     puts $flist
+##     puts $dir_list
+## 
+##     return [list $flist $dir_list]
+## }
+# set flist_filename  flist.vcs
+../../import/black-parrot/external/basejump_stl/hard/ultrascale_plus/bsg_mem/bsg_mem_1rw_sync_mask_write_bit.v
+../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_noc_pkg.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_pkg.v ../../import/black-parrot/bp_common/src/include/bp_common_pkg.sv ../../import/black-parrot/bp_fe/src/include/bp_fe_pkg.sv ../../import/black-parrot/bp_be/src/include/bp_be_pkg.sv ../../import/black-parrot/bp_me/src/include/bp_me_pkg.sv ../../import/black-parrot/external/basejump_stl/bsg_async/bsg_async_fifo.v ../../import/black-parrot/external/basejump_stl/bsg_async/bsg_launch_sync_sync.v ../../import/black-parrot/external/basejump_stl/bsg_async/bsg_async_ptr_gray.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_dma.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_miss.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_decode.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_sbuf.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_sbuf_queue.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi_rx.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi_tx.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_in.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_out.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged_fifo.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_large.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_pseudo_large.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_small.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_small_unhardened.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1rw_large.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_tracker.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_flow_counter.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_one_fifo.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_dynamic.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_passthrough.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_1_to_n.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_2_to_2.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_n_to_1.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_dynamic.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_full.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_passthrough.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_shift_reg.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_two_fifo.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_replacement.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_sync.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_tag_array.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync.v ../../import/black-parrot/external/basejump_stl/hard/ultrascale_plus/bsg_mem/bsg_mem_1rw_sync_mask_write_bit.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync_mask_write_byte.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync_mask_write_byte_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_2r1w_sync.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_2r1w_sync_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_3r1w_sync.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_3r1w_sync_synth.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_cin.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_ripple_carry.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_arb_fixed.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_arb_round_robin.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_array_concentrate_static.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_buf.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_buf_ctrl.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_circular_ptr.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_concentrate_static.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_clear_up.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_clear_up_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_set_down.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_set_en.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_up_down.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_up_down_variable.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_crossbar_o_by_i.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_cycle_counter.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_decode.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_decode_with_v.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_en_bypass.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset_en_bypass.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_chain.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_en.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset_en.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset_set_clear.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_edge_detect.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_encode_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_expand_bitmask.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_hash_bank.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_hash_bank_reverse.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_idiv_iterative.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_idiv_iterative_controller.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_lfsr.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_lru_pseudo_tree_backup.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_lru_pseudo_tree_decode.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_lru_pseudo_tree_encode.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_bitwise.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_butterfly.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_segmented.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_muxi2_gatestack.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_nor2.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_nor3.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_nand.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_priority_encode.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_priority_encode_one_hot_out.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_reduce.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_reduce_segmented.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_rotate_left.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_rotate_right.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_round_robin_arb.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_scan.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_strobe.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_swap.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_thermometer_count.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_transpose.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_unconcentrate_static.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_xnor.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_mesh_stitch.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_noc_repeater_node.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator_in.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator_out.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter_in.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter_out.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_decoder_dor.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_input_control.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_output_control.v ../../import/black-parrot/external/HardFloat/source/addRecFN.v ../../import/black-parrot/external/HardFloat/source/compareRecFN.v ../../import/black-parrot/external/HardFloat/source/divSqrtRecFN_small.v ../../import/black-parrot/external/HardFloat/source/fNToRecFN.v ../../import/black-parrot/external/HardFloat/source/HardFloat_primitives.v ../../import/black-parrot/external/HardFloat/source/HardFloat_rawFN.v ../../import/black-parrot/external/HardFloat/source/iNToRecFN.v ../../import/black-parrot/external/HardFloat/source/isSigNaNRecFN.v ../../import/black-parrot/external/HardFloat/source/mulAddRecFN.v ../../import/black-parrot/external/HardFloat/source/mulRecFN.v ../../import/black-parrot/external/HardFloat/source/recFNToFN.v ../../import/black-parrot/external/HardFloat/source/recFNToIN.v ../../import/black-parrot/external/HardFloat/source/recFNToRecFN.v ../../import/black-parrot/external/HardFloat/source/RISCV/HardFloat_specialize.v ../../import/black-parrot/bp_common/src/v/bsg_fifo_1r1w_rolly.sv ../../import/black-parrot/bp_common/src/v/bsg_bus_pack.sv ../../import/black-parrot/bp_common/src/v/bp_mmu.sv ../../import/black-parrot/bp_common/src/v/bp_pma.sv ../../import/black-parrot/bp_common/src/v/bp_tlb.sv ../../import/black-parrot/bp_be/src/v/bp_be_top.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_calculator_top.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_csr.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_fp_to_rec.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_int.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_aux.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_ctl.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_fma.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_long.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_mem.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_sys.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_ptw.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_rec_to_fp.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_cmd_queue.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_detector.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_director.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_instr_decoder.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_issue_queue.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_regfile.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_scheduler.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_scoreboard.sv ../../import/black-parrot/bp_be/src/v/bp_be_dcache/bp_be_dcache.sv ../../import/black-parrot/bp_be/src/v/bp_be_dcache/bp_be_dcache_decoder.sv ../../import/black-parrot/bp_be/src/v/bp_be_dcache/bp_be_dcache_wbuf.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_bht.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_btb.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_icache.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_instr_scan.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_pc_gen.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_top.sv ../../import/black-parrot/bp_me/src/v/lce/bp_lce.sv ../../import/black-parrot/bp_me/src/v/lce/bp_lce_req.sv ../../import/black-parrot/bp_me/src/v/lce/bp_lce_cmd.sv ../../import/black-parrot/bp_me/src/v/cache/bp_me_cce_to_cache.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_alu.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_arbitrate.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_branch.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_dir.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_dir_lru_extract.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_dir_segment.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_dir_tag_checker.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_gad.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_inst_decode.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_inst_predecode.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_inst_ram.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_inst_stall.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_msg.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_pending_bits.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_pma.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_reg.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_spec_bits.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_src_sel.sv ../../import/black-parrot/bp_me/src/v/cce/bp_io_cce.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_fsm.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_wrapper.sv ../../import/black-parrot/bp_me/src/v/axi/axi_lite_to_bp_lite_client.sv ../../import/black-parrot/bp_me/src/v/axi/bp_lite_to_axi_lite_master.sv ../../import/black-parrot/bp_me/src/v/cce/bp_uce.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_addr_to_cce_id.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_id_to_cord.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_bidir.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_client.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_master.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cord_to_id.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_lce_id_to_cord.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_cmd.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_req.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_resp.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_mem_cmd.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_mem_resp.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_lite_to_stream.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_stream_to_lite.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_lite_to_burst.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_burst_to_lite.sv ../../import/black-parrot/bp_top/src/v/bp_loopback.sv ../../import/black-parrot/bp_top/src/v/bp_nd_socket.sv ../../import/black-parrot/bp_top/src/v/bp_cacc_vdp.sv ../../import/black-parrot/bp_top/src/v/bp_cacc_tile.sv ../../import/black-parrot/bp_top/src/v/bp_cacc_tile_node.sv ../../import/black-parrot/bp_top/src/v/bp_cacc_complex.sv ../../import/black-parrot/bp_top/src/v/bp_sacc_vdp.sv ../../import/black-parrot/bp_top/src/v/bp_sacc_tile.sv ../../import/black-parrot/bp_top/src/v/bp_sacc_tile_node.sv ../../import/black-parrot/bp_top/src/v/bp_sacc_complex.sv ../../import/black-parrot/bp_top/src/v/bp_cfg.sv ../../import/black-parrot/bp_top/src/v/bp_core.sv ../../import/black-parrot/bp_top/src/v/bp_core_minimal.sv ../../import/black-parrot/bp_top/src/v/bp_core_complex.sv ../../import/black-parrot/bp_top/src/v/bp_clint_slice.sv ../../import/black-parrot/bp_top/src/v/bp_l2e_tile.sv ../../import/black-parrot/bp_top/src/v/bp_l2e_tile_node.sv ../../import/black-parrot/bp_top/src/v/bp_io_complex.sv ../../import/black-parrot/bp_top/src/v/bp_io_link_to_lce.sv ../../import/black-parrot/bp_top/src/v/bp_io_tile.sv ../../import/black-parrot/bp_top/src/v/bp_io_tile_node.sv ../../import/black-parrot/bp_top/src/v/bp_mem_complex.sv ../../import/black-parrot/bp_top/src/v/bp_multicore.sv ../../import/black-parrot/bp_top/src/v/bp_unicore.sv ../../import/black-parrot/bp_top/src/v/bp_unicore_lite.sv ../../import/black-parrot/bp_top/src/v/bp_tile.sv ../../import/black-parrot/bp_top/src/v/bp_tile_node.sv ../../import/black-parrot/bp_common/src/v/bsg_async_noc_link.sv ../../import/black-parrot/bp_common/src/v/bsg_dff_reset_half.v ../../import/black-parrot/bp_common/src/v/bsg_cache_dma_to_wormhole.v ../../import/black-parrot/bp_common/src/v/bsg_wormhole_to_cache_dma_fanout.v ../../import/black-parrot/bp_common/src/v/bsg_mem_1r1w_sync_mask_write_bit_reshape.v ../bp_unicore_axi_sim.sv ../bp_to_axi_decoder.sv ../../common/v/bsg_zynq_pl_shell.v ../top_zynq.sv top.v
+../../import/black-parrot/external/basejump_stl/bsg_dataflow ../../import/black-parrot/external/basejump_stl/bsg_mem ../../import/black-parrot/external/basejump_stl/bsg_misc ../../import/black-parrot/external/basejump_stl/bsg_test ../../import/black-parrot/external/basejump_stl/bsg_noc ../../import/black-parrot/external/basejump_stl/bsg_cache ../../import/black-parrot/external/HardFloat/source ../../import/black-parrot/external/HardFloat/source/RISCV ../../import/black-parrot/bp_common/src/include ../../import/black-parrot/bp_fe/src/include ../../import/black-parrot/bp_be/src/include ../../import/black-parrot/bp_me/src/include ../../import/black-parrot/bp_top/src/include
+# set flist_includelist [vivado_parse_bp_vcs_flist $flist_filename ../../import/black-parrot ../../import/black-parrot/external/basejump_stl ../../import/black-parrot/external/HardFloat ../../common/v]
+# set flist    [lindex $flist_includelist 0]
+# set includelist  [lindex $flist_includelist 1]
+# puts $flist
+../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_noc_pkg.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_pkg.v ../../import/black-parrot/bp_common/src/include/bp_common_pkg.sv ../../import/black-parrot/bp_fe/src/include/bp_fe_pkg.sv ../../import/black-parrot/bp_be/src/include/bp_be_pkg.sv ../../import/black-parrot/bp_me/src/include/bp_me_pkg.sv ../../import/black-parrot/external/basejump_stl/bsg_async/bsg_async_fifo.v ../../import/black-parrot/external/basejump_stl/bsg_async/bsg_launch_sync_sync.v ../../import/black-parrot/external/basejump_stl/bsg_async/bsg_async_ptr_gray.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_dma.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_miss.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_decode.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_sbuf.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_sbuf_queue.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi_rx.v ../../import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi_tx.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_in.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_out.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged_fifo.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_large.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_pseudo_large.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_small.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_small_unhardened.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1rw_large.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_tracker.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_flow_counter.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_one_fifo.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_dynamic.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_passthrough.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_1_to_n.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_2_to_2.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_n_to_1.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_dynamic.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_full.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_passthrough.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_shift_reg.v ../../import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_two_fifo.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_replacement.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_sync.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_tag_array.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync.v ../../import/black-parrot/external/basejump_stl/hard/ultrascale_plus/bsg_mem/bsg_mem_1rw_sync_mask_write_bit.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync_mask_write_byte.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync_mask_write_byte_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_2r1w_sync.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_2r1w_sync_synth.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_3r1w_sync.v ../../import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_3r1w_sync_synth.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_cin.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_ripple_carry.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_arb_fixed.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_arb_round_robin.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_array_concentrate_static.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_buf.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_buf_ctrl.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_circular_ptr.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_concentrate_static.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_clear_up.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_clear_up_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_set_down.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_set_en.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_up_down.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_up_down_variable.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_crossbar_o_by_i.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_cycle_counter.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_decode.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_decode_with_v.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_en_bypass.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset_en_bypass.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_chain.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_en.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset_en.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset_set_clear.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_edge_detect.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_encode_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_expand_bitmask.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_hash_bank.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_hash_bank_reverse.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_idiv_iterative.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_idiv_iterative_controller.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_lfsr.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_lru_pseudo_tree_backup.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_lru_pseudo_tree_decode.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_lru_pseudo_tree_encode.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_bitwise.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_butterfly.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_one_hot.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_segmented.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_muxi2_gatestack.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_nor2.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_nor3.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_nand.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_priority_encode.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_priority_encode_one_hot_out.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_reduce.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_reduce_segmented.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_rotate_left.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_rotate_right.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_round_robin_arb.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_scan.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_strobe.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_swap.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_thermometer_count.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_transpose.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_unconcentrate_static.v ../../import/black-parrot/external/basejump_stl/bsg_misc/bsg_xnor.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_mesh_stitch.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_noc_repeater_node.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator_in.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator_out.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter_in.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter_out.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_decoder_dor.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_input_control.v ../../import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_output_control.v ../../import/black-parrot/external/HardFloat/source/addRecFN.v ../../import/black-parrot/external/HardFloat/source/compareRecFN.v ../../import/black-parrot/external/HardFloat/source/divSqrtRecFN_small.v ../../import/black-parrot/external/HardFloat/source/fNToRecFN.v ../../import/black-parrot/external/HardFloat/source/HardFloat_primitives.v ../../import/black-parrot/external/HardFloat/source/HardFloat_rawFN.v ../../import/black-parrot/external/HardFloat/source/iNToRecFN.v ../../import/black-parrot/external/HardFloat/source/isSigNaNRecFN.v ../../import/black-parrot/external/HardFloat/source/mulAddRecFN.v ../../import/black-parrot/external/HardFloat/source/mulRecFN.v ../../import/black-parrot/external/HardFloat/source/recFNToFN.v ../../import/black-parrot/external/HardFloat/source/recFNToIN.v ../../import/black-parrot/external/HardFloat/source/recFNToRecFN.v ../../import/black-parrot/external/HardFloat/source/RISCV/HardFloat_specialize.v ../../import/black-parrot/bp_common/src/v/bsg_fifo_1r1w_rolly.sv ../../import/black-parrot/bp_common/src/v/bsg_bus_pack.sv ../../import/black-parrot/bp_common/src/v/bp_mmu.sv ../../import/black-parrot/bp_common/src/v/bp_pma.sv ../../import/black-parrot/bp_common/src/v/bp_tlb.sv ../../import/black-parrot/bp_be/src/v/bp_be_top.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_calculator_top.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_csr.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_fp_to_rec.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_int.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_aux.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_ctl.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_fma.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_long.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_mem.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_sys.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_ptw.sv ../../import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_rec_to_fp.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_cmd_queue.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_detector.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_director.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_instr_decoder.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_issue_queue.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_regfile.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_scheduler.sv ../../import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_scoreboard.sv ../../import/black-parrot/bp_be/src/v/bp_be_dcache/bp_be_dcache.sv ../../import/black-parrot/bp_be/src/v/bp_be_dcache/bp_be_dcache_decoder.sv ../../import/black-parrot/bp_be/src/v/bp_be_dcache/bp_be_dcache_wbuf.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_bht.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_btb.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_icache.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_instr_scan.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_pc_gen.sv ../../import/black-parrot/bp_fe/src/v/bp_fe_top.sv ../../import/black-parrot/bp_me/src/v/lce/bp_lce.sv ../../import/black-parrot/bp_me/src/v/lce/bp_lce_req.sv ../../import/black-parrot/bp_me/src/v/lce/bp_lce_cmd.sv ../../import/black-parrot/bp_me/src/v/cache/bp_me_cce_to_cache.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_alu.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_arbitrate.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_branch.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_dir.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_dir_lru_extract.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_dir_segment.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_dir_tag_checker.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_gad.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_inst_decode.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_inst_predecode.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_inst_ram.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_inst_stall.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_msg.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_pending_bits.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_pma.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_reg.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_spec_bits.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_src_sel.sv ../../import/black-parrot/bp_me/src/v/cce/bp_io_cce.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_fsm.sv ../../import/black-parrot/bp_me/src/v/cce/bp_cce_wrapper.sv ../../import/black-parrot/bp_me/src/v/axi/axi_lite_to_bp_lite_client.sv ../../import/black-parrot/bp_me/src/v/axi/bp_lite_to_axi_lite_master.sv ../../import/black-parrot/bp_me/src/v/cce/bp_uce.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_addr_to_cce_id.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_id_to_cord.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_bidir.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_client.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_master.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_cord_to_id.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_lce_id_to_cord.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_cmd.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_req.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_resp.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_mem_cmd.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_mem_resp.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_lite_to_stream.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_stream_to_lite.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_lite_to_burst.sv ../../import/black-parrot/bp_me/src/v/wormhole/bp_burst_to_lite.sv ../../import/black-parrot/bp_top/src/v/bp_loopback.sv ../../import/black-parrot/bp_top/src/v/bp_nd_socket.sv ../../import/black-parrot/bp_top/src/v/bp_cacc_vdp.sv ../../import/black-parrot/bp_top/src/v/bp_cacc_tile.sv ../../import/black-parrot/bp_top/src/v/bp_cacc_tile_node.sv ../../import/black-parrot/bp_top/src/v/bp_cacc_complex.sv ../../import/black-parrot/bp_top/src/v/bp_sacc_vdp.sv ../../import/black-parrot/bp_top/src/v/bp_sacc_tile.sv ../../import/black-parrot/bp_top/src/v/bp_sacc_tile_node.sv ../../import/black-parrot/bp_top/src/v/bp_sacc_complex.sv ../../import/black-parrot/bp_top/src/v/bp_cfg.sv ../../import/black-parrot/bp_top/src/v/bp_core.sv ../../import/black-parrot/bp_top/src/v/bp_core_minimal.sv ../../import/black-parrot/bp_top/src/v/bp_core_complex.sv ../../import/black-parrot/bp_top/src/v/bp_clint_slice.sv ../../import/black-parrot/bp_top/src/v/bp_l2e_tile.sv ../../import/black-parrot/bp_top/src/v/bp_l2e_tile_node.sv ../../import/black-parrot/bp_top/src/v/bp_io_complex.sv ../../import/black-parrot/bp_top/src/v/bp_io_link_to_lce.sv ../../import/black-parrot/bp_top/src/v/bp_io_tile.sv ../../import/black-parrot/bp_top/src/v/bp_io_tile_node.sv ../../import/black-parrot/bp_top/src/v/bp_mem_complex.sv ../../import/black-parrot/bp_top/src/v/bp_multicore.sv ../../import/black-parrot/bp_top/src/v/bp_unicore.sv ../../import/black-parrot/bp_top/src/v/bp_unicore_lite.sv ../../import/black-parrot/bp_top/src/v/bp_tile.sv ../../import/black-parrot/bp_top/src/v/bp_tile_node.sv ../../import/black-parrot/bp_common/src/v/bsg_async_noc_link.sv ../../import/black-parrot/bp_common/src/v/bsg_dff_reset_half.v ../../import/black-parrot/bp_common/src/v/bsg_cache_dma_to_wormhole.v ../../import/black-parrot/bp_common/src/v/bsg_wormhole_to_cache_dma_fanout.v ../../import/black-parrot/bp_common/src/v/bsg_mem_1r1w_sync_mask_write_bit_reshape.v ../bp_unicore_axi_sim.sv ../bp_to_axi_decoder.sv ../../common/v/bsg_zynq_pl_shell.v ../top_zynq.sv top.v
+# puts $includelist
+../../import/black-parrot/external/basejump_stl/bsg_dataflow ../../import/black-parrot/external/basejump_stl/bsg_mem ../../import/black-parrot/external/basejump_stl/bsg_misc ../../import/black-parrot/external/basejump_stl/bsg_test ../../import/black-parrot/external/basejump_stl/bsg_noc ../../import/black-parrot/external/basejump_stl/bsg_cache ../../import/black-parrot/external/HardFloat/source ../../import/black-parrot/external/HardFloat/source/RISCV ../../import/black-parrot/bp_common/src/include ../../import/black-parrot/bp_fe/src/include ../../import/black-parrot/bp_be/src/include ../../import/black-parrot/bp_me/src/include ../../import/black-parrot/bp_top/src/include
+# set project_top_module top
+# set project_name black_parrot_ip_proj
+# create_project -force ${project_name} [pwd] -part xc7z020clg400-1
+# foreach {i} ${flist} {
+#     set filename [file normalize ${i}]
+#     puts "Adding $filename"
+#     add_files -norecurse $filename
+#     #set_property file_type {Verilog Header} [get_files ${basejump_path}${i}]
+#     set_property file_type SystemVerilog [get_files ${i}]
+# }
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_noc_pkg.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_pkg.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_pkg.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/include/bp_fe_pkg.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/include/bp_be_pkg.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/include/bp_me_pkg.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_async/bsg_async_fifo.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_async/bsg_launch_sync_sync.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_async/bsg_async_ptr_gray.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_dma.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_miss.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_decode.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_sbuf.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_sbuf_queue.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi_rx.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi_tx.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_in.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_out.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged_fifo.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_large.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_pseudo_large.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_small.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_small_unhardened.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1rw_large.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_tracker.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_flow_counter.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_one_fifo.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_dynamic.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_passthrough.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_1_to_n.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_2_to_2.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_n_to_1.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_dynamic.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_full.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_passthrough.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_shift_reg.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_two_fifo.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_replacement.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_sync.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_tag_array.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_one_hot.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync.v
+CRITICAL WARNING: [Vivado 12-3645] Please note that adding or importing multiple files, one at a time, can be performance intensive.  Both add_files and import_files commands accept multiple files as input, and passing a collection of multiple files to a single add_files or import_files commands can offer significant performance improvement.
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit_synth.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_synth.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_synth.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/hard/ultrascale_plus/bsg_mem/bsg_mem_1rw_sync_mask_write_bit.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync_mask_write_byte.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync_mask_write_byte_synth.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1rw_sync_synth.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_2r1w_sync.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_2r1w_sync_synth.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_3r1w_sync.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_3r1w_sync_synth.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_cin.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_one_hot.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_ripple_carry.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_arb_fixed.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_arb_round_robin.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_array_concentrate_static.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_buf.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_buf_ctrl.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_circular_ptr.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_concentrate_static.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_clear_up.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_clear_up_one_hot.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_set_down.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_set_en.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_up_down.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_up_down_variable.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_crossbar_o_by_i.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_cycle_counter.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_decode.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_decode_with_v.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_en_bypass.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset_en_bypass.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_chain.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_en.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset_en.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_dff_reset_set_clear.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_edge_detect.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_encode_one_hot.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_expand_bitmask.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_hash_bank.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_hash_bank_reverse.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_idiv_iterative.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_idiv_iterative_controller.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_lfsr.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_lru_pseudo_tree_backup.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_lru_pseudo_tree_decode.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_lru_pseudo_tree_encode.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_bitwise.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_butterfly.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_one_hot.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_segmented.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_muxi2_gatestack.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_nor2.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_nor3.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_nand.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_priority_encode.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_priority_encode_one_hot_out.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_reduce.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_reduce_segmented.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_rotate_left.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_rotate_right.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_round_robin_arb.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_scan.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_strobe.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_swap.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_thermometer_count.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_transpose.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_unconcentrate_static.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_xnor.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_mesh_stitch.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_noc_repeater_node.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator_in.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator_out.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter_in.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter_out.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_decoder_dor.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_input_control.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_output_control.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/addRecFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/compareRecFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/divSqrtRecFN_small.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/fNToRecFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/HardFloat_primitives.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/HardFloat_rawFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/iNToRecFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/isSigNaNRecFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/mulAddRecFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/mulRecFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/recFNToFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/recFNToIN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/recFNToRecFN.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/RISCV/HardFloat_specialize.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bsg_fifo_1r1w_rolly.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bsg_bus_pack.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bp_mmu.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bp_pma.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bp_tlb.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_top.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_calculator_top.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_csr.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_fp_to_rec.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_int.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_aux.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_ctl.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_fma.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_long.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_mem.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_pipe_sys.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_ptw.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_calculator/bp_be_rec_to_fp.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_cmd_queue.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_detector.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_director.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_instr_decoder.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_issue_queue.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_regfile.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_scheduler.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_checker/bp_be_scoreboard.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_dcache/bp_be_dcache.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_dcache/bp_be_dcache_decoder.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/v/bp_be_dcache/bp_be_dcache_wbuf.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/v/bp_fe_bht.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/v/bp_fe_btb.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/v/bp_fe_icache.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/v/bp_fe_instr_scan.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/v/bp_fe_pc_gen.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/v/bp_fe_top.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/lce/bp_lce.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/lce/bp_lce_req.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/lce/bp_lce_cmd.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cache/bp_me_cce_to_cache.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_alu.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_arbitrate.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_branch.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_dir.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_dir_lru_extract.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_dir_segment.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_dir_tag_checker.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_gad.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_inst_decode.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_inst_predecode.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_inst_ram.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_inst_stall.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_msg.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_pending_bits.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_pma.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_reg.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_spec_bits.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_src_sel.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_io_cce.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_fsm.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_wrapper.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/axi/axi_lite_to_bp_lite_client.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/axi/bp_lite_to_axi_lite_master.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_uce.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_addr_to_cce_id.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_id_to_cord.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_bidir.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_client.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_master.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_cord_to_id.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_lce_id_to_cord.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_cmd.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_req.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_resp.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_mem_cmd.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_mem_resp.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_lite_to_stream.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_stream_to_lite.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_lite_to_burst.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_burst_to_lite.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_loopback.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_nd_socket.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_cacc_vdp.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_cacc_tile.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_cacc_tile_node.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_cacc_complex.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_sacc_vdp.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_sacc_tile.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_sacc_tile_node.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_sacc_complex.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_cfg.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_core.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_core_minimal.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_core_complex.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_clint_slice.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_l2e_tile.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_l2e_tile_node.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_io_complex.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_io_link_to_lce.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_io_tile.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_io_tile_node.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_mem_complex.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_multicore.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_unicore.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_unicore_lite.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_tile.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_tile_node.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bsg_async_noc_link.sv
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bsg_dff_reset_half.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bsg_cache_dma_to_wormhole.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bsg_wormhole_to_cache_dma_fanout.v
+Adding /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bsg_mem_1r1w_sync_mask_write_bit_reshape.v
+Adding /home/chaiwn/zynq-parrot/cosim/black-parrot-example/bp_unicore_axi_sim.sv
+Adding /home/chaiwn/zynq-parrot/cosim/black-parrot-example/bp_to_axi_decoder.sv
+Adding /home/chaiwn/zynq-parrot/cosim/common/v/bsg_zynq_pl_shell.v
+Adding /home/chaiwn/zynq-parrot/cosim/black-parrot-example/top_zynq.sv
+Adding /home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/top.v
+# set_property include_dirs ${includelist} [current_fileset]
+# set_property top ${project_top_module} [current_fileset]
+# ipx::package_project -root_dir fpga_build -vendor user.org -library user -taxonomy /UserIP -import_files -set_current false
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_test' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/RISCV' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/include' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/include' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/include' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-4656] Synthesis file group is packaged with a Dependency property value '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/include' although it may not be recognized as a synthesis -include_dir property after IP delivery.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_async/bsg_async_fifo.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_async/bsg_launch_sync_sync.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_async/bsg_async_ptr_gray.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_in.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_out.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged_fifo.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_large.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_pseudo_large.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1rw_large.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_dynamic.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_passthrough.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_1_to_n.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_2_to_2.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_dynamic.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_full.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_passthrough.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_shift_reg.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_sync.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_one_hot.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit_synth.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_adder_ripple_carry.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_array_concentrate_static.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_buf_ctrl.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_concentrate_static.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_clear_up_one_hot.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_counter_up_down_variable.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_cycle_counter.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_edge_detect.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_hash_bank.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_hash_bank_reverse.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_lfsr.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_mux_butterfly.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_reduce_segmented.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_swap.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_thermometer_count.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_transpose.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc/bsg_unconcentrate_static.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_mesh_stitch.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_noc_repeater_node.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator_in.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_concentrator_out.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter_in.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_adapter_out.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_decoder_dor.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_input_control.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_output_control.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/addRecFN.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/mulRecFN.v'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/v/bsg_fifo_1r1w_rolly.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/lce/bp_lce.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/lce/bp_lce_req.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/lce/bp_lce_cmd.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_alu.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_arbitrate.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_branch.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_dir.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_dir_lru_extract.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_dir_segment.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_dir_tag_checker.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_gad.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_inst_decode.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_inst_predecode.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_inst_ram.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_inst_stall.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_msg.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_pending_bits.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_pma.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_reg.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_spec_bits.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_src_sel.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_io_cce.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_fsm.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/cce/bp_cce_wrapper.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/axi/bp_lite_to_axi_lite_master.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_addr_to_cce_id.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_id_to_cord.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_bidir.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_client.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_cce_to_mem_link_master.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_lce_id_to_cord.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_cmd.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_req.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_lce_resp.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_mem_cmd.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_me_wormhole_packet_encode_mem_resp.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_lite_to_stream.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_stream_to_lite.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_lite_to_burst.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/v/wormhole/bp_burst_to_lite.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_nd_socket.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_cacc_vdp.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_cacc_tile.sv'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/v/bp_cacc_tile_node.sv'.
+INFO: [Common 17-14] Message 'IP_Flow 19-3833' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_funct3_width_gp' by 3 for port or parameter 'rv64_instr_rtype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_funct7_width_gp' by 7 for port or parameter 'rv64_instr_rtype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_opcode_width_gp' by 7 for port or parameter 'rv64_instr_rtype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_reg_addr_width_gp' by 5 for port or parameter 'rv64_instr_rtype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_opcode_width_gp' by 7 for port or parameter 'rv64_instr_fmatype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_reg_addr_width_gp' by 5 for port or parameter 'rv64_instr_fmatype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_funct7_width_gp' by 7 for port or parameter 'rv64_instr_ftype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_opcode_width_gp' by 7 for port or parameter 'rv64_instr_ftype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_reg_addr_width_gp' by 5 for port or parameter 'rv64_instr_ftype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_funct3_width_gp' by 3 for port or parameter 'rv64_instr_itype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_imm12_width_gp' by 12 for port or parameter 'rv64_instr_itype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_opcode_width_gp' by 7 for port or parameter 'rv64_instr_itype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_reg_addr_width_gp' by 5 for port or parameter 'rv64_instr_itype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_funct3_width_gp' by 3 for port or parameter 'rv64_instr_stype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_imm11to5_width_gp' by 7 for port or parameter 'rv64_instr_stype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_imm4to0_width_gp' by 5 for port or parameter 'rv64_instr_stype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_opcode_width_gp' by 7 for port or parameter 'rv64_instr_stype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_reg_addr_width_gp' by 5 for port or parameter 'rv64_instr_stype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_imm20_width_gp' by 20 for port or parameter 'rv64_instr_utype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_opcode_width_gp' by 7 for port or parameter 'rv64_instr_utype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'rv64_reg_addr_width_gp' by 5 for port or parameter 'rv64_instr_utype_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'sv39_ppn_width_gp' by 44 for port or parameter 'sv39_pte_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'sv39_pte_width_gp' by 64 for port or parameter 'sv39_pte_s'
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_custom_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_12_cce_ucode_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_12_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_16_cce_ucode_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_16_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_accelerator_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_bootrom_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_cce_ucode_bootrom_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_cce_ucode_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_cce_ucode_paddr_large_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_cce_ucode_paddr_small_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_l1_medium_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_l1_small_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_l2e_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_no_l2_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_paddr_large_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_1_paddr_small_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_2_cce_ucode_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_2_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_2_l2e_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_3_cce_ucode_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_3_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_4_cce_ucode_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_4_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_4_l2e_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_6_cce_ucode_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_6_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_8_cce_ucode_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_8_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_multicore_half_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_bootrom_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_half_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_l1_atomic_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_l1_hetero_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_l1_medium_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_l1_small_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_l1_tiny_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_l1_wide_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_l2_atomic_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_no_l2_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_paddr_large_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_paddr_small_cfg_p'.
+WARNING: [IP_Flow 19-587] [HDL Parser] HDL port or parameter 'all_cfgs_gp' has a dependency on the module local parameter or undefined parameter 'bp_unicore_writethrough_cfg_p'.
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'sp_exp_width_gp' by 8 for port or parameter 'bp_hardfloat_rec_sp_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'sp_sig_width_gp' by 24 for port or parameter 'bp_hardfloat_rec_sp_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'dp_exp_width_gp' by 11 for port or parameter 'bp_hardfloat_rec_dp_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'dp_sig_width_gp' by 53 for port or parameter 'bp_hardfloat_rec_dp_s'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'dpath_width_gp' by 66 for port or parameter 'bp_be_dcache_pkt_s'
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/HardFloat_consts.vi" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/HardFloat_specialize.vi" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bsg_defines.v" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_addr_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_bedrock_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_cache_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_cache_engine_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_cfg_bus_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_clint_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_core_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_host_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_rv64_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_aviary_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_aviary_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_me_cce_inst_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_me_cce_inst_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_me_axi_pkgdef.sv" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bsg_cache.vh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_core_if.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_bedrock_if.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_cache_engine_if.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_addr_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_cfg_bus_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_log_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_rv64_instr_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_common_rv64_csr_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_me_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_me_cache_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_me_cce_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_me_wormhole_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bsg_noc_links.vh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bsg_wormhole_router.vh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_be_ctl_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_be_dcache_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_be_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_be_dcache_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_top_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_fe_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_fe_icache_defines.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/bp_fe_icache_pkgdef.svh" from the top-level HDL file.
+INFO: [IP_Flow 19-1842] HDL Parser: Found include file "src/HardFloat_localFuncs.vi" from the top-level HDL file.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'm00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's01_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'm00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's01_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'm00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's01_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'm00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 's01_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'm00_axi_aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'm00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's01_axi_aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's01_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 'm00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 'm00_axi_aresetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 's01_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's01_axi_aresetn'.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+ipx::package_project: Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1472.980 ; gain = 0.379 ; free physical = 726 ; free virtual = 44172
+# ipx::unload_core fpga_build/component.xml
+# ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory fpga_build fpga_build/component.xml
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_cce_inst_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_axi_pkgdef.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/HardFloat_specialize.vi:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/HardFloat_consts.vi:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_wormhole_router.vh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/HardFloat_localFuncs.vi:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_icache_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_icache_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_core_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_cfg_bus_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_rv64_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_host_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_bedrock_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_clint_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_cache_engine_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_aviary_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_addr_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_cache_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_top_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_ctl_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_dcache_pkgdef.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_dcache_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_log_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_cache.vh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_core_if.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_noc_links.vh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_addr_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_cache_engine_if.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_rv64_instr_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_bedrock_if.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_defines.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_cfg_bus_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_rv64_csr_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_cache_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_aviary_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_wormhole_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_cce_inst_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_cce_defines.svh:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/HardFloat_primitives.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/HardFloat_rawFN.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/HardFloat_specialize.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_common_pkg.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_pkg.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/axi_lite_to_bp_lite_client.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_pkg.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_calculator_top.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_cmd_queue.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_csr.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_dcache.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_dcache_decoder.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_dcache_wbuf.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_detector.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_director.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_fp_to_rec.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_instr_decoder.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_issue_queue.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_pipe_aux.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_pipe_ctl.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_pipe_fma.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_pipe_int.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_pipe_long.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_pipe_mem.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_pipe_sys.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_ptw.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_rec_to_fp.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_regfile.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_scheduler.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_scoreboard.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_be_top.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_noc_pkg.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_wormhole_router_pkg.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_cache_pkg.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_cfg.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_clint_slice.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_pkg.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_core_minimal.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_bht.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_btb.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_icache.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_instr_scan.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_pc_gen.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_fe_top.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_loopback.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_cce_to_cache.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_me_cord_to_id.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_mmu.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_pma.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_tlb.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_to_axi_decoder.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_uce.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_unicore.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_unicore_axi_sim.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bp_unicore_lite.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_adder_cin.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_adder_one_hot.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build/src/bsg_arb_fixed.v:]
+INFO: [Common 17-14] Message 'filemgmt 56-99' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.1/data/ip'.
+# update_compile_order -fileset sources_1
+# set_property previous_version_for_upgrade user.org:user:top:1.0 [ipx::current_core]
+# set_property core_revision 1 [ipx::current_core]
+# ipx::create_xgui_files [ipx::current_core]
+# ipx::update_checksums [ipx::current_core]
+# ipx::save_core [ipx::current_core]
+# ipx::move_temp_component_back -component [ipx::current_core]
+# close_project -delete
+# set_property  ip_repo_paths fpga_build [current_project]
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/fpga_build'.
+# puts "Type start_gui to enter Vivado GUI; quit to exit and continue"
+Type start_gui to enter Vivado GUI; quit to exit and continue
+quit
+INFO: [Common 17-206] Exiting Vivado at Tue Jun  1 15:47:06 2021...

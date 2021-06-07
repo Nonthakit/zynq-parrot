@@ -1,0 +1,184 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Tue Jun  1 16:04:24 2021
+| Host         : pdb running 64-bit Ubuntu 18.04.5 LTS
+| Command      : report_drc -file black_parrot_bd_1_wrapper_drc_routed.rpt -pb black_parrot_bd_1_wrapper_drc_routed.pb -rpx black_parrot_bd_1_wrapper_drc_routed.rpx
+| Design       : black_parrot_bd_1_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 29
++----------+----------+------------------------+------------+
+| Rule     | Severity | Description            | Violations |
++----------+----------+------------------------+------------+
+| DPIP-1   | Warning  | Input pipelining       | 14         |
+| DPOP-1   | Warning  | PREG Output pipelining | 7          |
+| DPOP-2   | Warning  | MREG Output pipelining | 7          |
+| PDRC-153 | Warning  | Gated clock check      | 1          |
++----------+----------+------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-1#1 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__0 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__0 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__1 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__2 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__3 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__4 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#8 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__4 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__5 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__5/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#10 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__6 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__6/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#11 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__7 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__7/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#12 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#13 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#14 Warning
+Input pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part0 input black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__0 output black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#2 Warning
+PREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__1 output black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#3 Warning
+PREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__4 output black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__4/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#4 Warning
+PREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__5 output black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__5/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#5 Warning
+PREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__7 output black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__7/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#6 Warning
+PREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part output black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#7 Warning
+PREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part0 output black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-2#1 Warning
+MREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__0 multiplier stage black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#2 Warning
+MREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__1 multiplier stage black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#3 Warning
+MREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__4 multiplier stage black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__4/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#4 Warning
+MREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__5 multiplier stage black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__5/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#5 Warning
+MREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__7 multiplier stage black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddResult0__7/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#6 Warning
+MREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part multiplier stage black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#7 Warning
+MREG Output pipelining  
+DSP black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part0 multiplier stage black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_fma/fma/mulAddToRaw_preMul/fi1.aux_part0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/axil2io/FSM_sequential_state_n_reg[1]_i_2_n_0 is a gated clock net sourced by a combinational pin black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/axil2io/FSM_sequential_state_n_reg[1]_i_2/O, cell black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/axil2io/FSM_sequential_state_n_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+

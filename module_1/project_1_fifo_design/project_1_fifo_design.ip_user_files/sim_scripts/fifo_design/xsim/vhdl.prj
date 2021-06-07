@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../bd/fifo_design/ip/fifo_design_smartconnect_0_0/bd_0/ip/ip_1/sim/bd_4d7f_psr_aclk_0.vhd" \
+"../../../bd/fifo_design/ip/fifo_design_rst_ps7_0_50M_0/sim/fifo_design_rst_ps7_0_50M_0.vhd" \
+
+nosort

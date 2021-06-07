@@ -1,0 +1,51 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Tue Jun  1 16:04:37 2021
+| Host         : pdb running 64-bit Ubuntu 18.04.5 LTS
+| Command      : report_methodology -file black_parrot_bd_1_wrapper_methodology_drc_routed.rpt -pb black_parrot_bd_1_wrapper_methodology_drc_routed.pb -rpx black_parrot_bd_1_wrapper_methodology_drc_routed.rpx
+| Design       : black_parrot_bd_1_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 3
++-----------+----------+------------------------------+------------+
+| Rule      | Severity | Description                  | Violations |
++-----------+----------+------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert | 1          |
+| TIMING-20 | Warning  | Non-clocked latch            | 2          |
++-----------+----------+------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell black_parrot_bd_1_i/top_0/inst/top_zynq_inst/zps/rof[0].slv_reg/data_r[0]_i_1__132, with 2 or more inputs, drives asynchronous preset/clear pin(s) black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_long/fdiv/cycleNum_reg[0]/CLR, black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_long/fdiv/cycleNum_reg[1]/CLR, black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_long/fdiv/cycleNum_reg[2]/CLR, black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_long/fdiv/cycleNum_reg[3]/CLR, black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_long/fdiv/cycleNum_reg[4]/CLR, black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/unicore/unicore_lite/core_minimal/be/calculator/pipe_long/fdiv/cycleNum_reg[5]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/axil2io/FSM_sequential_state_n_reg[0] cannot be properly analyzed as its control pin black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/axil2io/FSM_sequential_state_n_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/axil2io/FSM_sequential_state_n_reg[1] cannot be properly analyzed as its control pin black_parrot_bd_1_i/top_0/inst/top_zynq_inst/blackparrot/axil2io/FSM_sequential_state_n_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+

@@ -1,0 +1,129 @@
+make[1]: Entering directory '/home/chaiwn/zynq-parrot/cosim/black-parrot-example/verilator'
+cp ../../import/black-parrot/bp_top/syn/flist.vcs flist.vcs
+echo "../bp_unicore_axi_sim.sv" >> flist.vcs
+echo "../bp_to_axi_decoder.sv" >> flist.vcs
+echo "\$BSG_ZYNQ_PL_SHELL_DIR/bsg_zynq_pl_shell.v" >> flist.vcs
+echo "../top_zynq.sv" >> flist.vcs
+echo "top.v" >> flist.vcs
+/gro/cad/verilator/v4.202/verilator//bin/verilator --cc -O1 --x-assign fast --x-initial fast --threads 1 -top-module top -f flist.vcs --build -j 4 -Wno-timescalemod --Wno-fatal --Wno-unoptflat --Wno-widthconcat --Wno-width --Wno-pinmissing --Wno-style  -I/home/chaiwn/zynq-parrot/cosim/import/black-parrot-sdk/install/include -I/home/chaiwn/zynq-parrot/cosim/import/black-parrot/tools/install/share/verilator/include/vltstd/ -sv -CFLAGS "-DGP0_ADDR_BASE=0x40000000U -DGP0_ADDR_SIZE_BYTES=4096 -DGP1_ADDR_BASE=0x80000000U -DGP1_ADDR_SIZE_BYTES=0x30000000U -I../../include/verilator -I../../../include/verilator -DBSG_ENABLE_S01  -DSKIP_DRAM_TESTING" --trace-fst --trace-structs  -exe ../ps.cpp 2>&1 | tee build.log
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+        ... Looked in:
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_misc//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_test//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_test//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_test//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/RISCV//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/RISCV//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/HardFloat/source/RISCV//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_fe/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_be/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_me/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_top/src/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot-sdk/install/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot-sdk/install/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot-sdk/install/include//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/tools/install/share/verilator/include/vltstd///home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/tools/install/share/verilator/include/vltstd///home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/tools/install/share/verilator/include/vltstd///home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+             obj_dir//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v
+             obj_dir//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.v
+             obj_dir//home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_pkg.v.sv
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_noc_pkg.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_noc/bsg_wormhole_router_pkg.v
+%Error: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_pkg.sv:11:10: Cannot find include file: bsg_defines.v
+   11 | `include "bsg_defines.v"
+      |          ^~~~~~~~~~~~~~~
+%Error: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_aviary_pkgdef.svh:8:28: Define or directive not defined: '`BSG_SAFE_CLOG2'
+    8 |   localparam lg_max_cfgs = `BSG_SAFE_CLOG2(max_cfgs);
+      |                            ^~~~~~~~~~~~~~~
+        /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_host_pkgdef.svh:10:55: ... note: In file included from bp_common_host_pkgdef.svh
+        /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_core_pkgdef.svh:97:37: ... note: In file included from bp_common_core_pkgdef.svh
+        /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_clint_pkgdef.svh:9:55: ... note: In file included from bp_common_clint_pkgdef.svh
+        /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_cfg_bus_pkgdef.svh:50:48: ... note: In file included from bp_common_cfg_bus_pkgdef.svh
+        /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_cache_engine_pkgdef.svh:45:28: ... note: In file included from bp_common_cache_engine_pkgdef.svh
+        /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_cache_pkgdef.svh:6:52: ... note: In file included from bp_common_cache_pkgdef.svh
+        /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_bedrock_pkgdef.svh:177:20: ... note: In file included from bp_common_bedrock_pkgdef.svh
+        /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_addr_pkgdef.svh:26:58: ... note: In file included from bp_common_addr_pkgdef.svh
+        /home/chaiwn/zynq-parrot/cosim/import/black-parrot/bp_common/src/include/bp_common_pkg.sv:32:39: ... note: In file included from bp_common_pkg.sv
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_async/bsg_async_fifo.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_async/bsg_launch_sync_sync.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_async/bsg_async_ptr_gray.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_dma.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_miss.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_decode.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_sbuf.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_sbuf_queue.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi_rx.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_cache/bsg_cache_to_axi_tx.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_in.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_channel_tunnel_out.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged_fifo.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_1_to_n_tagged.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_large.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_pseudo_large.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_small.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1r1w_small_unhardened.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_1rw_large.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_fifo_tracker.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_flow_counter.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_one_fifo.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_dynamic.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_parallel_in_serial_out_passthrough.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_1_to_n.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_2_to_2.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_round_robin_n_to_1.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_dynamic.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_full.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_serial_in_parallel_out_passthrough.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_shift_reg.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_dataflow/bsg_two_fifo.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_replacement.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_sync.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_cam_1r1w_tag_array.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_one_hot.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit.v
+%Error: Cannot find file containing module: /home/chaiwn/zynq-parrot/cosim/import/black-parrot/external/basejump_stl/bsg_mem/bsg_mem_1r1w_sync_mask_write_bit_synth.v
+%Error: Exiting due to too many errors encountered; --error-limit=50
+make -j -C obj_dir/ -f Vtop.mk Vtop
+make[2]: Entering directory '/home/chaiwn/zynq-parrot/cosim/black-parrot-example/verilator'
+make[2]: Leaving directory '/home/chaiwn/zynq-parrot/cosim/black-parrot-example/verilator'
+Makefile:78: recipe for target 'obj_dir/Vtop' failed
+make[1]: Leaving directory '/home/chaiwn/zynq-parrot/cosim/black-parrot-example/verilator'

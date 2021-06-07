@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed May 26 05:40:50 2021
+# Process ID: 5219
+# Current directory: /home/chaiwn/project_1_fifo_design/project_1_fifo_design.runs/fifo_design_fifo_axi_0_0_synth_1
+# Command line: vivado -log fifo_design_fifo_axi_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_design_fifo_axi_0_0.tcl
+# Log file: /home/chaiwn/project_1_fifo_design/project_1_fifo_design.runs/fifo_design_fifo_axi_0_0_synth_1/fifo_design_fifo_axi_0_0.vds
+# Journal file: /home/chaiwn/project_1_fifo_design/project_1_fifo_design.runs/fifo_design_fifo_axi_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source fifo_design_fifo_axi_0_0.tcl -notrace

@@ -1,0 +1,487 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed May 26 05:26:51 2021
+# Process ID: 593
+# Current directory: /home/chaiwn/ip_repo/edit_fifo_axi_v1_0.runs/synth_1
+# Command line: vivado -log fifo_axi_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_axi_v1_0.tcl
+# Log file: /home/chaiwn/ip_repo/edit_fifo_axi_v1_0.runs/synth_1/fifo_axi_v1_0.vds
+# Journal file: /home/chaiwn/ip_repo/edit_fifo_axi_v1_0.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source fifo_axi_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/chaiwn/ip_repo/fifo_axi_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/chaiwn/ip_repo/basejump_stl'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/ip_repo/fifo_axi_1.0/hdl/fifo_axi_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/chaiwn/ip_repo/fifo_axi_1.0/hdl/fifo_axi_v1_0.v:]
+Command: synth_design -top fifo_axi_v1_0 -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 622 
+WARNING: [Synth 8-1921] elaboration system task fatal violates IEEE 1800 syntax [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_dlatch.v:12]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1721.391 ; gain = 156.684 ; free physical = 9425 ; free virtual = 43554
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'fifo_axi_v1_0' [/home/chaiwn/ip_repo/fifo_axi_1.0/hdl/fifo_axi_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_axi_v1_0_S00_AXI' [/home/chaiwn/ip_repo/fifo_axi_1.0/hdl/fifo_axi_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 2 - type: integer 
+	Parameter FIFO_ELS bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bsg_fifo_1r1w_small' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_fifo_1r1w_small.v:22]
+	Parameter width_p bound to: 32 - type: integer 
+	Parameter els_p bound to: 8 - type: integer 
+	Parameter harden_p bound to: 0 - type: integer 
+	Parameter ready_THEN_valid_p bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bsg_fifo_1r1w_small_unhardened' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_fifo_1r1w_small_unhardened.v:20]
+	Parameter width_p bound to: 32 - type: integer 
+	Parameter els_p bound to: 8 - type: integer 
+	Parameter ready_THEN_valid_p bound to: 0 - type: integer 
+	Parameter ptr_width_lp bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bsg_fifo_tracker' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_fifo_tracker.v:8]
+	Parameter els_p bound to: 8 - type: integer 
+	Parameter ptr_width_lp bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bsg_circular_ptr' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_circular_ptr.v:11]
+	Parameter slots_p bound to: 8 - type: integer 
+	Parameter max_add_p bound to: 1 - type: integer 
+	Parameter ptr_width_lp bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bsg_circular_ptr' (1#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_circular_ptr.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'bsg_fifo_tracker' (2#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_fifo_tracker.v:8]
+INFO: [Synth 8-6157] synthesizing module 'bsg_mem_1r1w' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_mem_1r1w.v:10]
+	Parameter width_p bound to: 32 - type: integer 
+	Parameter els_p bound to: 8 - type: integer 
+	Parameter read_write_same_addr_p bound to: 0 - type: integer 
+	Parameter addr_width_lp bound to: 3 - type: integer 
+	Parameter harden_p bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bsg_mem_1r1w_synth' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_mem_1r1w_synth.v:13]
+	Parameter width_p bound to: 32 - type: integer 
+	Parameter els_p bound to: 8 - type: integer 
+	Parameter read_write_same_addr_p bound to: 0 - type: integer 
+	Parameter addr_width_lp bound to: 3 - type: integer 
+	Parameter harden_p bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bsg_mem_1r1w_synth' (3#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_mem_1r1w_synth.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'bsg_mem_1r1w' (4#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_mem_1r1w.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'bsg_fifo_1r1w_small_unhardened' (5#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_fifo_1r1w_small_unhardened.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'bsg_fifo_1r1w_small' (6#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_fifo_1r1w_small.v:22]
+INFO: [Synth 8-6157] synthesizing module 'bsg_flow_counter' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_flow_counter.v:10]
+	Parameter els_p bound to: 8 - type: integer 
+	Parameter count_free_p bound to: 1 - type: integer 
+	Parameter ready_THEN_valid_p bound to: 0 - type: integer 
+	Parameter ptr_width_lp bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bsg_counter_up_down' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_counter_up_down.v:26]
+	Parameter max_val_p bound to: 8 - type: integer 
+	Parameter init_val_p bound to: 8 - type: integer 
+	Parameter max_step_p bound to: 1 - type: integer 
+	Parameter step_width_lp bound to: 1 - type: integer 
+	Parameter ptr_width_lp bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bsg_counter_up_down' (7#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_counter_up_down.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'bsg_flow_counter' (8#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_flow_counter.v:10]
+INFO: [Synth 8-6157] synthesizing module 'bsg_flow_counter__parameterized0' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_flow_counter.v:10]
+	Parameter els_p bound to: 8 - type: integer 
+	Parameter count_free_p bound to: 0 - type: integer 
+	Parameter ready_THEN_valid_p bound to: 0 - type: integer 
+	Parameter ptr_width_lp bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bsg_counter_up_down__parameterized0' [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_counter_up_down.v:26]
+	Parameter max_val_p bound to: 8 - type: integer 
+	Parameter init_val_p bound to: 0 - type: integer 
+	Parameter max_step_p bound to: 1 - type: integer 
+	Parameter step_width_lp bound to: 1 - type: integer 
+	Parameter ptr_width_lp bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bsg_counter_up_down__parameterized0' (8#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_counter_up_down.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'bsg_flow_counter__parameterized0' (8#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/src/bsg_flow_counter.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_axi_v1_0_S00_AXI' (9#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/hdl/fifo_axi_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_axi_v1_0' (10#1) [/home/chaiwn/ip_repo/fifo_axi_1.0/hdl/fifo_axi_v1_0.v:4]
+WARNING: [Synth 8-3331] design bsg_mem_1r1w_synth has unconnected port w_reset_i
+WARNING: [Synth 8-3331] design bsg_mem_1r1w_synth has unconnected port r_v_i
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[1]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[0]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[1]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[0]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1752.297 ; gain = 187.590 ; free physical = 9456 ; free virtual = 43585
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1770.109 ; gain = 205.402 ; free physical = 9452 ; free virtual = 43581
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1770.109 ; gain = 205.402 ; free physical = 9452 ; free virtual = 43581
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/chaiwn/ip_repo/edit_fifo_axi_v1_0.srcs/constrs_1/new/fifo_design.xdc]
+Finished Parsing XDC File [/home/chaiwn/ip_repo/edit_fifo_axi_v1_0.srcs/constrs_1/new/fifo_design.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1940.828 ; gain = 0.000 ; free physical = 9366 ; free virtual = 43495
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1943.797 ; gain = 2.969 ; free physical = 9365 ; free virtual = 43494
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9399 ; free virtual = 43529
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9399 ; free virtual = 43529
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9399 ; free virtual = 43529
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9392 ; free virtual = 43522
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
+	   4 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 8     
++---Registers : 
+	               32 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 15    
++---Muxes : 
+	   6 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 5     
+	   3 Input     32 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 24    
+	   4 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module bsg_circular_ptr 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                3 Bit    Registers := 1     
+Module bsg_fifo_tracker 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module bsg_counter_up_down 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+Module bsg_counter_up_down__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+Module fifo_axi_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   6 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 5     
+	   3 Input     32 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 24    
+	   4 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_awaddr[1]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_awaddr[0]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_araddr[1]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_araddr[0]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design fifo_axi_v1_0 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'fifo_axi_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'fifo_axi_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fifo_axi_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fifo_axi_v1_0_S00_AXI_inst/axi_bresp_reg[0] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9380 ; free virtual = 43513
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++--------------+----------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|Module Name   | RTL Object                                                                       | Inference | Size (Depth x Width) | Primitives   | 
++--------------+----------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|fifo_axi_v1_0 | fifo_axi_v1_0_S00_AXI_inst/in_fifo/unhardened.un.fifo/mem_1r1w/synth/nz.mem_reg  | Implied   | 8 x 32               | RAM32M x 6   | 
+|fifo_axi_v1_0 | fifo_axi_v1_0_S00_AXI_inst/out_fifo/unhardened.un.fifo/mem_1r1w/synth/nz.mem_reg | Implied   | 8 x 32               | RAM32M x 6   | 
++--------------+----------------------------------------------------------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9287 ; free virtual = 43419
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9287 ; free virtual = 43419
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++--------------+----------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|Module Name   | RTL Object                                                                       | Inference | Size (Depth x Width) | Primitives   | 
++--------------+----------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|fifo_axi_v1_0 | fifo_axi_v1_0_S00_AXI_inst/in_fifo/unhardened.un.fifo/mem_1r1w/synth/nz.mem_reg  | Implied   | 8 x 32               | RAM32M x 6   | 
+|fifo_axi_v1_0 | fifo_axi_v1_0_S00_AXI_inst/out_fifo/unhardened.un.fifo/mem_1r1w/synth/nz.mem_reg | Implied   | 8 x 32               | RAM32M x 6   | 
++--------------+----------------------------------------------------------------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9285 ; free virtual = 43417
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9285 ; free virtual = 43417
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9285 ; free virtual = 43417
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9285 ; free virtual = 43417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9285 ; free virtual = 43417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9285 ; free virtual = 43417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9285 ; free virtual = 43417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     2|
+|3     |LUT1   |     3|
+|4     |LUT2   |    10|
+|5     |LUT3   |    22|
+|6     |LUT4   |    19|
+|7     |LUT5   |    19|
+|8     |LUT6   |    51|
+|9     |RAM32M |    12|
+|10    |FDRE   |   143|
+|11    |FDSE   |     5|
+|12    |IBUF   |    49|
+|13    |OBUF   |    41|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------------------+------------------------------------+------+
+|      |Instance                     |Module                              |Cells |
++------+-----------------------------+------------------------------------+------+
+|1     |top                          |                                    |   377|
+|2     |  fifo_axi_v1_0_S00_AXI_inst |fifo_axi_v1_0_S00_AXI               |   286|
+|3     |    in_fifo                  |bsg_fifo_1r1w_small                 |    37|
+|4     |      \unhardened.un.fifo    |bsg_fifo_1r1w_small_unhardened_2    |    37|
+|5     |        ft                   |bsg_fifo_tracker_3                  |    31|
+|6     |          rptr               |bsg_circular_ptr_6                  |    23|
+|7     |          wptr               |bsg_circular_ptr_7                  |     6|
+|8     |        mem_1r1w             |bsg_mem_1r1w_4                      |     6|
+|9     |          synth              |bsg_mem_1r1w_synth_5                |     6|
+|10    |    out_fifo                 |bsg_fifo_1r1w_small_0               |    28|
+|11    |      \unhardened.un.fifo    |bsg_fifo_1r1w_small_unhardened      |    28|
+|12    |        ft                   |bsg_fifo_tracker                    |    22|
+|13    |          rptr               |bsg_circular_ptr                    |    13|
+|14    |          wptr               |bsg_circular_ptr_1                  |     7|
+|15    |        mem_1r1w             |bsg_mem_1r1w                        |     6|
+|16    |          synth              |bsg_mem_1r1w_synth                  |     6|
+|17    |    pl_to_ps_counter         |bsg_flow_counter__parameterized0    |    11|
+|18    |      \gen_blk_0.counter     |bsg_counter_up_down__parameterized0 |    11|
+|19    |    ps_to_pl_counter         |bsg_flow_counter                    |    12|
+|20    |      \gen_blk_0.counter     |bsg_counter_up_down                 |    12|
++------+-----------------------------+------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9285 ; free virtual = 43417
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1943.797 ; gain = 205.402 ; free physical = 9340 ; free virtual = 43472
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.797 ; gain = 379.090 ; free physical = 9340 ; free virtual = 43472
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1946.766 ; gain = 0.000 ; free physical = 9285 ; free virtual = 43417
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 12 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+42 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1946.766 ; gain = 529.664 ; free physical = 9384 ; free virtual = 43516
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1946.766 ; gain = 0.000 ; free physical = 9384 ; free virtual = 43516
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/chaiwn/ip_repo/edit_fifo_axi_v1_0.runs/synth_1/fifo_axi_v1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file fifo_axi_v1_0_utilization_synth.rpt -pb fifo_axi_v1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed May 26 05:27:37 2021...

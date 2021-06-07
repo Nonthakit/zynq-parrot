@@ -35,7 +35,7 @@ export PATH := $(BP_TOOLS_DIR)/install/bin:$(PATH)
 export TEST_DIR ?= .
 export TOP  ?= top
 export HOST-PROGRAM ?= ps.cpp
-NBF_FILE=../prog.nbf
+NBF_FILE=../../../software/nbf/prime.nbf
 
 $(warning Using BSG_ZYNQ_PL_SHELL_DIR=$(BSG_ZYNQ_PL_SHELL_DIR))
 $(warning Using BLACKPARROT_DIR=$(BLACKPARROT_DIR))

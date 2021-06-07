@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Jun  1 15:56:26 2021
+# Process ID: 19710
+# Current directory: /home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/black_parrot_bd_proj.runs/impl_1
+# Command line: vivado -log black_parrot_bd_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source black_parrot_bd_1_wrapper.tcl -notrace
+# Log file: /home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/black_parrot_bd_proj.runs/impl_1/black_parrot_bd_1_wrapper.vdi
+# Journal file: /home/chaiwn/zynq-parrot/cosim/black-parrot-example/fpga/black_parrot_bd_proj.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source black_parrot_bd_1_wrapper.tcl -notrace

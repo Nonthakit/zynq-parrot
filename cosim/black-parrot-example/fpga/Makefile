@@ -9,7 +9,7 @@ SHELL := /bin/bash
 
 PS_FILE=../ps.cpp
 BASENAME=black_parrot
-NBF_FILE?=../prog.nbf
+NBF_FILE?=../../../software/nbf/prime.nbf
 
 SKIP_DRAM=-DSKIP_DRAM_TESTING
 
