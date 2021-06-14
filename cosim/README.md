@@ -5,6 +5,7 @@ Examples:
 - **double-shell-example**: two shells that talk to each other, demonstrating both ports on the Zynq chip. Runs in verilator and FPGA.
 - **blackparrot-example**: working example of BlackParrot. Runs in Verilator and FPGA.
 - **dram-example**: tests the software running on ARM that allocates DRAM space out of the ARM Linux available memory for the PL
+- **project**: On-going project.
 
 *For this repo to work, make sure to git submodule --init:*
 
