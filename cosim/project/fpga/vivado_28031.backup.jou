@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Jun 13 22:29:15 2021
+# Process ID: 28031
+# Current directory: /home/chaiwn/zynq-parrot/cosim/project/fpga
+# Command line: vivado -source vivado-build-ip.tcl -mode tcl
+# Log file: /home/chaiwn/zynq-parrot/cosim/project/fpga/vivado.log
+# Journal file: /home/chaiwn/zynq-parrot/cosim/project/fpga/vivado.jou
+#-----------------------------------------------------------
+source vivado-build-ip.tcl
+quit
